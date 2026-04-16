@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo Educativo: Literatura Colombiana</title>
+    <!-- Tailwind CSS para el diseño -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome para íconos -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Estilos personalizados para la línea de tiempo */
+        .timeline-container {
+            position: relative;
+        }
+        .timeline-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 20px;
+            width: 4px;
+            background-color: #FBBF24; /* Amarillo */
+            border-radius: 2px;
+        }
+        @media (min-width: 768px) {
+            .timeline-container::before {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2rem;
+        }
+        .timeline-dot {
+            position: absolute;
+            left: 12px;
+            top: 10px;
+            width: 20px;
+            height: 20px;
+            background-color: #1D4ED8; /* Azul */
+            border: 4px solid white;
+            border-radius: 50%;
+            z-index: 10;
+        }
+        @media (min-width: 768px) {
+            .timeline-dot {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            .timeline-content {
+                width: 45%;
+            }
+            .timeline-item:nth-child(odd) .timeline-content {
+                margin-left: 0;
+                margin-right: auto;
+                text-align: right;
+                padding-right: 2rem;
+            }
+            .timeline-item:nth-child(even) .timeline-content {
+                margin-left: auto;
+                margin-right: 0;
+                text-align: left;
+                padding-left: 2rem;
+            }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans">
+
+    <!-- Navegación -->
+    <nav class="bg-blue-900 text-white sticky top-0 z-50 shadow-md">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="font-bold text-xl flex items-center gap-2">
+                <i class="fas fa-book-open text-yellow-400"></i> LitCol
+            </div>
+            <div class="hidden md:flex gap-4 text-sm font-medium">
+                <a href="#linea-tiempo" class="hover:text-yellow-400 transition">Línea de Tiempo</a>
+                <a href="#teoria-video" class="hover:text-yellow-400 transition">Teoría y Video</a>
+                <a href="#lectura" class="hover:text-yellow-400 transition">Lecturas</a>
+                <a href="#actividades" class="hover:text-yellow-400 transition">Actividades</a>
+                <a href="#taller" class="hover:text-yellow-400 transition">Taller</a>
+                <a href="#recursos" class="hover:text-yellow-400 transition">Recursos</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Encabezado Principal -->
+    <header class="bg-gradient-to-b from-blue-800 to-blue-600 text-white py-16 text-center px-4">
+        <h1 class="text-4xl md:text-5xl font-extrabold mb-4 text-yellow-400">Literatura Colombiana</h1>
+        <p class="text-lg md:text-xl max-w-2xl mx-auto opacity-90">Un viaje interactivo a través del realismo mágico, la violencia, la selva y la identidad nacional.</p>
+    </header>
+
+    <main class="container mx-auto px-4 py-10 space-y-20">
+
+        <!-- LÍNEA DE TIEMPO -->
+        <section id="linea-tiempo">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-bold text-blue-900 mb-2">Línea de Tiempo Literaria</h2>
+                <p class="text-slate-600">Hitos fundamentales en la historia de nuestras letras.</p>
+            </div>
+            
+            <div class="timeline-container max-w-4xl mx-auto">
+                <!-- Item Época Precolombina -->
+                <div class="timeline-item flex flex-col md:flex-row w-full pl-12 md:pl-0">
+                    <div class="timeline-dot shadow-md" style="background-color: #10B981; border-color: white;"></div>
+                    <div class="timeline-content bg-white p-5 rounded-lg shadow border-l-4 border-emerald-500 hover:shadow-lg transition">
+                        <span class="text-sm font-bold text-emerald-600">Época Precolombina</span>
+                        <h3 class="font-bold text-lg">Mitos y Tradición Oral</h3>
+                        <p class="text-sm text-slate-600 mt-2">Relatos de creación de culturas como los Muiscas y Taironas. Destacan el Mito de Bachué y la Leyenda de Yurupary.</p>
+                    </div>
+                </div>
+                <!-- Item 1 -->
+                <div class="timeline-item flex flex-col md:flex-row w-full pl-12 md:pl-0">
+                    <div class="timeline-dot shadow-md"></div>
+                    <div class="timeline-content bg-white p-5 rounded-lg shadow border-l-4 border-yellow-400 hover:shadow-lg transition">
+                        <span class="text-sm font-bold text-blue-600">1867</span>
+                        <h3 class="font-bold text-lg">María - Jorge Isaacs</h3>
+                        <p class="text-sm text-slate-600 mt-2">Cumbre del romanticismo hispanoamericano. Una historia de amor trágico en el Valle del Cauca.</p>
+                    </div>
+                </div>
+                <!-- Item 2 -->
+                <div class="timeline-item flex flex-col md:flex-row w-full pl-12 md:pl-0">
+                    <div class="timeline-dot shadow-md"></div>
+                    <div class="timeline-content bg-white p-5 rounded-lg shadow border-l-4 border-blue-600 hover:shadow-lg transition">
+                        <span class="text-sm font-bold text-blue-600">1924</span>
+                        <h3 class="font-bold text-lg">La Vorágine - José Eustasio Rivera</h3>
+                        <p class="text-sm text-slate-600 mt-2">La novela de la selva. Denuncia la explotación cauchera y muestra la naturaleza como un monstruo devorador.</p>
+                    </div>
+                </div>
+                <!-- Item 3 -->
+                <div class="timeline-item flex flex-col md:flex-row w-full pl-12 md:pl-0">
+                    <div class="timeline-dot shadow-md"></div>
+                    <div class="timeline-content bg-white p-5 rounded-lg shadow border-l-4 border-red-600 hover:shadow-lg transition">
+                        <span class="text-sm font-bold text-blue-600">1967</span>
+                        <h3 class="font-bold text-lg">Cien años de soledad - Gabriel García Márquez</h3>
+                        <p class="text-sm text-slate-600 mt-2">Obra maestra del Realismo Mágico y del Boom Latinoamericano. La historia de la familia Buendía en Macondo.</p>
+                    </div>
+                </div>
+                <!-- Item 4 -->
+                <div class="timeline-item flex flex-col md:flex-row w-full pl-12 md:pl-0">
+                    <div class="timeline-dot shadow-md"></div>
+                    <div class="timeline-content bg-white p-5 rounded-lg shadow border-l-4 border-yellow-400 hover:shadow-lg transition">
+                        <span class="text-sm font-bold text-blue-600">Contemporánea</span>
+                        <h3 class="font-bold text-lg">Nuevas Voces</h3>
+                        <p class="text-sm text-slate-600 mt-2">Autores como Laura Restrepo, Héctor Abad Faciolince y Juan Gabriel Vásquez exploran la memoria, la violencia urbana y la historia reciente.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TEORÍA Y VIDEO -->
+        <section id="teoria-video" class="bg-white rounded-2xl shadow-xl overflow-hidden">
+            <div class="grid md:grid-cols-2">
+                <div class="p-8 md:p-12 flex flex-col justify-center">
+                    <h2 class="text-3xl font-bold text-blue-900 mb-4">Contexto y Estilos</h2>
+                    <p class="text-slate-600 mb-4">
+                        La literatura colombiana no se puede entender sin su geografía fragmentada y su compleja historia política. Desde el costumbrismo hasta la novela negra contemporánea, los autores han intentado explicar qué significa ser colombiano.
+                    </p>
+                    <ul class="space-y-3 mt-2">
+                        <li class="flex items-start gap-2">
+                            <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                            <span><strong>El Realismo Mágico:</strong> Lo insólito se muestra como algo cotidiano.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                            <span><strong>Sicaresca y Novela Urbana:</strong> Explora las realidades de las ciudades en los años 80 y 90.</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bg-slate-100 p-4 md:p-8 flex items-center justify-center">
+                    <!-- Video Educativo Embebido de YouTube -->
+                    <div class="w-full aspect-video rounded-xl overflow-hidden shadow-lg border-4 border-slate-200">
+                        <iframe class="w-full h-full" src="https://www.youtube.com/embed/jZ18o5-hS6A" title="Video Literario" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- LECTURA PRECOLOMBINA -->
+        <section id="precolombina" class="bg-emerald-900 text-white p-8 rounded-2xl shadow-xl overflow-hidden mb-10">
+            <div class="flex items-center gap-3 mb-6">
+                <i class="fas fa-leaf text-2xl text-emerald-400"></i>
+                <h2 class="text-2xl font-bold">Raíces Precolombinas: El Mito de Bachué</h2>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div class="relative bg-emerald-800 p-6 rounded-lg italic text-lg text-emerald-100 leading-relaxed font-serif shadow-inner border border-emerald-700">
+                    <i class="fas fa-quote-left absolute top-4 left-4 text-3xl text-emerald-900 opacity-50"></i>
+                    <p class="relative z-10">
+                        "De las aguas cristalinas de la laguna de Iguaque emergió una mujer de belleza indescriptible llamada Bachué, llevando a un niño de la mano. Juntos bajaron a la sabana y poblaron la tierra. Tras enseñar a sus hijos las leyes y el cultivo, ya ancianos, regresaron a la laguna, transformándose en dos grandes serpientes acuáticas para vigilar eternamente a su pueblo."
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold text-emerald-300 mb-3">La Tradición Oral</h3>
+                    <p class="text-emerald-50 mb-4">
+                        Antes de la llegada de los europeos, la literatura en el territorio que hoy es Colombia no se escribía, sino que se transmitía de generación en generación a través de la <strong>palabra hablada</strong>.
+                    </p>
+                    <p class="text-emerald-50">
+                        Los mitos, como este de la cultura <strong>Muisca</strong>, explicaban el origen del mundo, las fuerzas de la naturaleza y el orden social, manteniendo viva la memoria colectiva y la cosmovisión de los pueblos originarios.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- LECTURA CLÁSICA -->
+        <section id="lectura" class="bg-white p-8 rounded-2xl shadow-md border-t-4 border-blue-600 mb-10">
+            <div class="flex items-center gap-3 mb-6">
+                <i class="fas fa-book-reader text-2xl text-blue-600"></i>
+                <h2 class="text-2xl font-bold text-slate-800">Lectura Clásica: La Vorágine</h2>
+            </div>
+            
+            <div class="relative bg-slate-50 p-6 md:p-10 rounded-lg italic text-lg md:text-xl text-slate-700 leading-relaxed font-serif shadow-inner border border-slate-200 max-w-4xl mx-auto">
+                <i class="fas fa-quote-left absolute top-4 left-4 text-4xl text-slate-200 opacity-50"></i>
+                <p class="relative z-10">
+                    "Antes que me hubiera apasionado por mujer alguna, jugué mi corazón al azar y me me lo ganó la Violencia. Nada supe de los deliquios embriagadores, ni de la confidencia sentimental, ni de la zozobra de las miradas cobardes. Más que el enamorado, fui siempre el dominador cuyos labios no conocieron la súplica."
+                </p>
+                <p class="text-right mt-6 font-bold text-blue-900 not-italic text-base">— José Eustasio Rivera, <span class="font-normal italic">La Vorágine</span> (1924)</p>
+            </div>
+        </section>
+
+        <!-- ACTIVIDADES DE COMPRENSIÓN -->
+        <section id="actividades" class="bg-slate-800 text-white p-8 md:p-12 rounded-2xl shadow-xl mb-10">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-bold text-yellow-400 mb-2"><i class="fas fa-brain mr-3"></i>Actividades de Comprensión</h2>
+                <p class="text-slate-300">Demuestra lo que has aprendido de las dos lecturas anteriores.</p>
+            </div>
+            
+            <form id="quizForm" class="grid md:grid-cols-2 gap-8">
+                <!-- Módulo Bachué -->
+                <div class="bg-slate-700 p-6 rounded-xl border border-slate-600 shadow-md hover:shadow-lg transition">
+                    <h3 class="text-emerald-400 text-xl font-bold mb-4 border-b border-emerald-400/30 pb-2"><i class="fas fa-leaf mr-2"></i> Sobre el Mito de Bachué</h3>
+                    
+                    <div class="mb-6">
+                        <p class="font-semibold mb-3 text-sm md:text-base">1. Según el mito, ¿qué elemento natural es el origen y el destino final de Bachué?</p>
+                        <div class="space-y-2 text-sm">
+                            <label class="block border border-slate-600 rounded-lg p-3 cursor-pointer hover:bg-slate-600 transition">
+                                <input type="radio" name="q1" value="a" class="mr-2 text-yellow-400"> La alta montaña nevada
+                            </label>
+                            <label class="block border border-slate-600 rounded-lg p-3 cursor-pointer hover:bg-slate-600 transition">
+                                <input type="radio" name="q1" value="b" class="mr-2 text-yellow-400"> Las aguas de la laguna
+                            </label>
+                            <label class="block border border-slate-600 rounded-lg p-3 cursor-pointer hover:bg-slate-600 transition">
+                                <input type="radio" name="q1" value="c" class="mr-2 text-yellow-400"> El fuego sagrado
+                            </label>
+                        </div>
+                    </div>
+
+                    <div>
+                        <p class="font-semibold mb-3 text-sm md:text-base">2. ¿Cuál era la misión principal de Bachué en la tierra?</p>
+                        <div class="space-y-2 text-sm">
+                            <label class="block border border-slate-600 rounded-lg p-3 cursor-pointer hover:bg-slate-600 transition">
+                                <input type="radio" name="q2" value="a" class="mr-2 text-yellow-400"> Poblar la tierra y enseñar leyes a sus hijos
+                            </label>
+                            <label class="block border border-slate-600 rounded-lg p-3 cursor-pointer hover:bg-slate-600 transition">
+                                <input type="radio" name="q2" value="b" class="mr-2 text-yellow-400"> Conquistar los territorios de otras tribus
+                            </label>
+                            <label class="block border border-slate-600 rounded-lg p-3 cursor-pointer hover:bg-slate-600 transition">
+                                <input type="radio" name="q2" value="c" class="mr-2 text-yellow-400"> Buscar oro y ofrendas para los dioses
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Módulo La Vorágine -->
+                <div class="bg-slate-700 p-6 rounded-xl border border-slate-600 shadow-md hover:shadow-lg transition">
+                    <h3 class="text-blue-400 text-xl font-bold mb-4 border-b border-blue-400/30 pb-2"><i class="fas fa-book text-blue-400 mr-2"></i> Sobre La Vorágine</h3>
+                    
+                    <div class="mb-6">
+                        <p class="font-semibold mb-3 text-sm md:text-base">3. En el fragmento, ¿quién "ganó" el corazón del protagonista?</p>
+                        <div class="space-y-2 text-sm">
+                            <label class="block border border-slate-600 rounded-lg p-3 cursor-pointer hover:bg-slate-600 transition">
+                                <input type="radio" name="q3" value="a" class="mr-2 text-yellow-400"> Una mujer apasionada
+                            </label>
+                            <label class="block border border-slate-600 rounded-lg p-3 cursor-pointer hover:bg-slate-600 transition">
+                                <input type="radio" name="q3" value="b" class="mr-2 text-yellow-400"> La Violencia
+                            </label>
+                            <label class="block border border-slate-600 rounded-lg p-3 cursor-pointer hover:bg-slate-600 transition">
+                                <input type="radio" name="q3" value="c" class="mr-2 text-yellow-400"> La selva amazónica
+                            </label>
+                        </div>
+                    </div>
+
+                    <div>
+                        <p class="font-semibold mb-3 text-sm md:text-base">4. ¿Cómo describe el protagonista su actitud en sus relaciones pasadas?</p>
+                        <div class="space-y-2 text-sm">
+                            <label class="block border border-slate-600 rounded-lg p-3 cursor-pointer hover:bg-slate-600 transition">
+                                <input type="radio" name="q4" value="a" class="mr-2 text-yellow-400"> Como un romántico que sufría en silencio
+                            </label>
+                            <label class="block border border-slate-600 rounded-lg p-3 cursor-pointer hover:bg-slate-600 transition">
+                                <input type="radio" name="q4" value="b" class="mr-2 text-yellow-400"> Como alguien cobarde e inseguro
+                            </label>
+                            <label class="block border border-slate-600 rounded-lg p-3 cursor-pointer hover:bg-slate-600 transition">
+                                <input type="radio" name="q4" value="c" class="mr-2 text-yellow-400"> Como un dominador que no conocía la súplica
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Botón de envío que ocupa las dos columnas -->
+                <div class="md:col-span-2 text-center mt-4">
+                    <button type="button" onclick="checkAnswers()" class="bg-yellow-400 text-slate-900 font-bold py-3 px-10 rounded-full hover:bg-yellow-300 transition shadow-lg text-lg flex items-center justify-center mx-auto gap-2">
+                        <i class="fas fa-check-double"></i> Evaluar mis respuestas
+                    </button>
+                    <div id="feedback" class="hidden mt-6 p-4 rounded-lg text-base font-medium text-center transition-all duration-300"></div>
+                </div>
+            </form>
+        </section>
+
+        <!-- TALLER DE ESCRITURA -->
+        <section id="taller" class="bg-gradient-to-r from-blue-50 to-white p-8 rounded-2xl shadow-md border border-slate-100">
+            <div class="max-w-3xl mx-auto">
+                <div class="text-center mb-6">
+                    <h2 class="text-3xl font-bold text-blue-900 mb-2"><i class="fas fa-pen-nib text-red-600 mr-2"></i>Taller de Escritura</h2>
+                    <p class="text-slate-600">Es tu turno de ser el autor.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-200 mb-6">
+                    <p class="mb-4 text-slate-700">El protagonista de <em>La Vorágine</em> dice: <strong>"jugué mi corazón al azar y me lo ganó..."</strong>. </p>
+                    <p class="mb-4 text-slate-700">Inspirándote en este inicio mítico, escribe un párrafo corto donde personifiques algo abstracto que haya "ganado tu corazón" (ej. la soledad, el arte, la montaña, el caos de la ciudad).</p>
+                    
+                    <textarea id="creativeText" rows="4" class="w-full p-4 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none resize-none" placeholder="Antes que me hubiera apasionado por..."></textarea>
+                </div>
+                
+                <div class="text-center">
+                    <button type="button" onclick="saveText()" class="bg-blue-600 text-white px-8 py-3 rounded-full font-bold hover:bg-blue-700 transition shadow-lg inline-flex items-center gap-2">
+                        <i class="fas fa-save"></i> Guardar mi escrito
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- RECURSOS EDUCATIVOS -->
+        <section id="recursos" class="mb-10">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-bold text-blue-900 mb-2">Recursos Educativos</h2>
+                <p class="text-slate-600">Continúa tu aprendizaje con estos materiales recomendados.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Recurso 1 -->
+                <a href="#" class="group bg-white p-6 rounded-xl shadow border border-slate-100 hover:shadow-xl hover:border-blue-300 transition flex flex-col items-center text-center">
+                    <div class="w-16 h-16 bg-red-100 text-red-600 rounded-full flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Biblioteca Nacional</h3>
+                    <p class="text-sm text-slate-500">Accede a manuscritos digitales y primeras ediciones gratuitas.</p>
+                </a>
+
+                <!-- Recurso 2 -->
+                <a href="#" class="group bg-white p-6 rounded-xl shadow border border-slate-100 hover:shadow-xl hover:border-blue-300 transition flex flex-col items-center text-center">
+                    <div class="w-16 h-16 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition">
+                        <i class="fas fa-podcast"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Podcast: Voces de Macondo</h3>
+                    <p class="text-sm text-slate-500">Análisis auditivo por capítulos de las obras del Boom Latinoamericano.</p>
+                </a>
+
+                <!-- Recurso 3 -->
+                <a href="#" class="group bg-white p-6 rounded-xl shadow border border-slate-100 hover:shadow-xl hover:border-blue-300 transition flex flex-col items-center text-center">
+                    <div class="w-16 h-16 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition">
+                        <i class="fas fa-film"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Documental RTVC</h3>
+                    <p class="text-sm text-slate-500">La historia detrás de la creación literaria en el siglo XX en Colombia.</p>
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-slate-900 text-slate-400 text-center py-8">
+        <p>© 2024 Módulo Interactivo de Literatura Colombiana. Creado con fines educativos.</p>
+    </footer>
+
+    <!-- Lógica JavaScript -->
+    <script>
+        function checkAnswers() {
+            // Respuestas correctas
+            const correctAnswers = {
+                q1: 'b', // la laguna
+                q2: 'a', // poblar la tierra
+                q3: 'b', // la violencia
+                q4: 'c'  // un dominador
+            };
+
+            let score = 0;
+            let allAnswered = true;
+
+            // Revisar cada pregunta dinámicamente
+            for (let i = 1; i <= 4; i++) {
+                const selected = document.querySelector(`input[name="q${i}"]:checked`);
+                const allRadios = document.querySelectorAll(`input[name="q${i}"]`);
+                
+                // Reiniciar estilos de todas las opciones
+                allRadios.forEach(radio => {
+                    const label = radio.parentElement;
+                    label.classList.remove('bg-green-600', 'bg-red-600', 'border-green-400', 'border-red-400', 'text-white');
+                    label.classList.add('hover:bg-slate-600');
+                });
+
+                if (!selected) {
+                    allAnswered = false;
+                } else {
+                    const selectedLabel = selected.parentElement;
+                    selectedLabel.classList.remove('hover:bg-slate-600');
+                    
+                    if (selected.value === correctAnswers[`q${i}`]) {
+                        score++;
+                        // Pintar la opción seleccionada de verde
+                        selectedLabel.classList.add('bg-green-600', 'border-green-400', 'text-white');
+                    } else {
+                        // Pintar la opción seleccionada de rojo
+                        selectedLabel.classList.add('bg-red-600', 'border-red-400', 'text-white');
+                        
+                        // Resaltar también cuál era la opción correcta en verde
+                        const correctLabel = document.querySelector(`input[name="q${i}"][value="${correctAnswers['q'+i]}"]`).parentElement;
+                        correctLabel.classList.remove('hover:bg-slate-600');
+                        correctLabel.classList.add('bg-green-600', 'border-green-400', 'text-white');
+                    }
+                }
+            }
+
+            const feedback = document.getElementById('feedback');
+            // Limpiar clases de estado previas del feedback
+            feedback.classList.remove('hidden', 'bg-green-100', 'text-green-800', 'bg-red-100', 'text-red-800', 'bg-yellow-100', 'text-yellow-800');
+
+            if (!allAnswered) {
+                feedback.classList.add('bg-yellow-100', 'text-yellow-800');
+                feedback.innerHTML = '<i class="fas fa-exclamation-triangle mr-2 text-xl align-middle"></i> Por favor, responde las 4 preguntas antes de evaluar.';
+                return;
+            }
+
+            if (score === 4) {
+                feedback.classList.add('bg-green-100', 'text-green-800');
+                feedback.innerHTML = `<i class="fas fa-trophy mr-2 text-xl align-middle"></i> ¡Excelente! Puntaje perfecto (${score}/4). Entiendes muy bien ambos textos.`;
+            } else {
+                feedback.classList.add('bg-red-100', 'text-red-800');
+                feedback.innerHTML = `<i class="fas fa-times-circle mr-2 text-xl align-middle"></i> Obtuviste ${score} de 4 respuestas correctas. Revisa las opciones marcadas en colores para aprender de tus errores.`;
+            }
+        }
+
+        function saveText() {
+            const text = document.getElementById('creativeText').value;
+            if (text.trim() === '') {
+                alert('La inspiración requiere al menos una palabra. ¡Escribe algo antes de guardar!');
+            } else {
+                // Aquí en una app real se enviaría a una base de datos o localStorage
+                alert('¡Gran trabajo literario!\n\nTu texto ha sido "guardado" exitosamente.\n\nSigue practicando tu escritura.');
+                document.getElementById('creativeText').value = ''; // Limpiar el campo
+            }
+        }
+    </script>
+</body>
+</html>
